@@ -2,6 +2,11 @@
   "name": "proyectoNode",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "license": "MIT",
   "dependencies": {
     "Express": "^3.0.1",
