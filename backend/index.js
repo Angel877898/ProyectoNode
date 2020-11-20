@@ -3,10 +3,10 @@ const express = require('express')
 const app = express()
 //routes
 const user = require('./routes/user')
+const empleados = require('./routes/empleados')
 //Middlewares
 const auth = require('./middleware/auth')
 const cors = require('./middleware/cors')
-const empleados = require('./routes/empleados')
 
 
 app.use(cors)
