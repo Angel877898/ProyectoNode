@@ -6,9 +6,10 @@ import '../assets/styles/components/Button.css'
 const Button = ({type, size, text, onClick}) => {
     return (
         <>
-        <button className={`button 
-            ${type === 'primary' ? "primary" : "secundary"} 
-            ${size === 'medium' ? "medium" : "large"}`}
+        <button 
+            className={`button 
+                ${type === 'primary' ? "primary" : "secundary"} 
+                ${size === 'medium' ? "medium" : "large"}`}
             onClick={onClick}
         >
         {text}
