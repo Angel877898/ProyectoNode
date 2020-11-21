@@ -4,6 +4,3 @@
 .icon:active{
     transform: translateX(2px);
 }
-.icon{
-    background-color: black;
-}
