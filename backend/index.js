@@ -7,6 +7,7 @@ const empleados = require('./routes/empleados')
 //Middlewares
 const auth = require('./middleware/auth')
 const cors = require('./middleware/cors')
+const notFound = require('./middleware/notFound')
 
 app.use(cors)
 app.use(morgan('dev'))
@@ -19,6 +20,10 @@ app.use(auth)
 
 app.get('/', (req, res, next) => res.status(200).json( {code: 1, message: 'Bienvenido'} ))
 app.use('/empleados', empleados)
+
+
+//Not found
+app.use(notFound);
 
 
 app.listen(process.env.PORT || 8000, () => {
