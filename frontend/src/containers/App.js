@@ -9,6 +9,7 @@ import '../assets/styles/containers/App.css'
 import Input from '../components/Input';
 import CardUser from '../components/CardUser';
 import CardHeader from '../components/CardHeader';
+import NotFound from '../components/notFound';
 
 const App = () => {
     
@@ -25,6 +26,11 @@ const App = () => {
         <FloatButton img={Plus} onClick={() => console.log('click')} />
         <CardUser tel="4871266303" name="Angel Uriel Hernandez Maldonadosadkhfjhfksasdasddsd" address="Boulevard Juriquilla 345 col jahsjhajhd" email="angurie_2008@hotmail.com" />
         <CardHeader/>
+        <Button type={'primary'} size={'medium'} />
+        <NotFound />
+        
+        <Icon src={logOut} />
+        <FloatButton img={Plus} onClick={() =>  window.location.href='/notFound.js'} />
         </>
     )
 }
