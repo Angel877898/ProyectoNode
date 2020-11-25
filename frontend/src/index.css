@@ -15,9 +15,14 @@
     font-size: 16px;
     font-family: 'Space Grotesk', sans-serif;
 }
-body {
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+/* body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
