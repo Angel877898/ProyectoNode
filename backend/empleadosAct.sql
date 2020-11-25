@@ -2,10 +2,17 @@
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD:backend/empleados.sql
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 25-11-2020 a las 22:35:00
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
+=======
+-- Host: 127.0.0.1
+-- Generation Time: Nov 25, 2020 at 04:18 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
+>>>>>>> origin/manuel:backend/empleadosAct.sql
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,8 +37,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `telefono` varchar(13) NOT NULL,
   `correo` varchar(200) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
   `contrasena` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,10 +48,10 @@ CREATE TABLE `admins` (
 -- Volcado de datos para la tabla `admins`
 --
 
-INSERT INTO `admins` (`id`, `nombre`, `apellido`, `correo`, `contrasena`) VALUES
-(1, 'Manuel', 'Castillo', 'manuel@mail.com', '123456'),
-(2, 'Angel', 'Hernandez', 'angel@mail.com', '123456'),
-(3, 'Moisés', 'Pérez', 'moises@mail.com', '123456');
+INSERT INTO `admins` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `direccion`, `contrasena`) VALUES
+(1, 'Manuel', 'Castillo', '4421759865', 'manuel@mail.com', 'Ignacio Zaragoza, Col. Rancho Largo', '123456'),
+(2, 'Angel', 'Hernandez', '4426581548', 'angel@mail.com', 'Ignacio Zaragoza, Col. Rancho Largo', '123456'),
+(3, 'Moisés', 'Pérez', '4429995564', 'moises@mail.com', 'Ignacio Zaragoza, Col. Rancho Largo', '123456');
 
 -- --------------------------------------------------------
 
@@ -52,14 +61,15 @@ INSERT INTO `admins` (`id`, `nombre`, `apellido`, `correo`, `contrasena`) VALUES
 
 CREATE TABLE `empleados` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
-  `apellidos` varchar(100) DEFAULT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
   `telefono` varchar(13) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `direccion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD:backend/empleados.sql
 -- Volcado de datos para la tabla `empleados`
 --
 
@@ -87,6 +97,16 @@ INSERT INTO `empleados` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `dir
 
 --
 -- Índices para tablas volcadas
+=======
+-- Dumping data for table `empleados`
+--
+
+INSERT INTO `empleados` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `direccion`) VALUES
+(1, 'Manuel', 'Castillo', '7122352271', 'jmanuel@mail.com', 'Ignacio Zaragoza');
+
+--
+-- Indexes for dumped tables
+>>>>>>> origin/manuel:backend/empleadosAct.sql
 --
 
 --
@@ -115,7 +135,11 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
+<<<<<<< HEAD:backend/empleados.sql
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> origin/manuel:backend/empleadosAct.sql
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
