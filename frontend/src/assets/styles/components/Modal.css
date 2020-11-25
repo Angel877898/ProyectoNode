@@ -1,0 +1,130 @@
+  .modalMedium-wrapper {
+    
+    background: #fff;
+    width: 100%;
+    max-width: 35rem;
+    margin: 4.5rem auto;
+    transition: all .5s ease;
+    border-radius: .6rem;
+    right: calc(50%-17.5rem);
+  }
+  
+  .modalMedium-header {
+    color: #e9e9e9;
+    padding: 1rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modalMedium-header p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .modalMedium-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .modal-body {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .modalMedium-body h4 {
+    font-size: 1.8rem;
+    color: #DD501D;
+  }
+  
+  .modalMedium-body p {
+    font-size: 1.125rem;
+    margin: .1rem 0 2rem 0;
+    text-align: center;
+  }
+  
+  .modalMedium-footer  {
+    display: flex;
+    font-size: 1rem;
+    margin-left: auto;
+    padding: 0.5rem 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    justify-content: space-around;
+  }
+
+
+  .modalLarge-wrapper {
+    background: #fff;
+    width: 100%;
+    max-width: 55rem;
+    margin: 4.5rem auto;
+    transition: all .5s ease;
+    border-radius: .6rem;
+    
+  }
+  
+  .modalLarge-header {
+    color: #e9e9e9;
+    padding: 1rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modalLarge-header p {
+    font-size: 2.5rem;
+    
+    font-weight: bold;
+    color: black;
+  }
+  
+  .modalLarge-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  
+  
+  .modalLarge-body  {
+    display: flex;
+    flex-direction: column;
+  }
+  .modalLarge-body-medium{
+      display: flex;
+      justify-content: space-evenly;
+      margin: .2rem;
+  }
+  .modalLarge-body-large{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+  
+  
+  
+  .modalLarge-footer  {
+    display: flex;
+    font-size: 1rem;
+    margin-left: auto;
+    padding: 0.5rem 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    justify-content: space-evenly;
+  }
+
+
+
+  
+  .back-drop {
+    background: rgba(63, 61, 61, 0.592);
+    height: 100%;
+    position: fixed;
+    transition: all 1.3s;
+    width: 100%;
+  }

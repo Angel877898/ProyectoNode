@@ -1,0 +1,69 @@
+.cardUser{
+    width: 65%;
+    height: 2.5rem;
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 1.2px 3px 5px   rgba(0, 0, 0, 0.18); 
+}
+.cardUser:hover{
+    cursor: pointer;
+}
+.cardUser__name{
+    height: 1.5rem;
+    width: 22%;
+    display: flex;
+    align-items: center;
+}
+.cardUser__name p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+.cardUser__tel{
+    height: 1.5rem;
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+.cardUser__tel p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.125rem;
+}
+.cardUser__address{
+    height: 1.5rem;
+    width: 22%;
+    display: flex;
+    align-items: center;
+}
+.cardUser__address p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.125rem;
+}
+.cardUser__email{
+    height: 1.5rem;
+    width: 22%;
+    display: flex;
+    align-items: center;
+}
+.cardUser__email p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.125rem;
+}
+.cardUser__icons{
+    height: 1.5rem;
+    width: 7%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

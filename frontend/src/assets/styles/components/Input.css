@@ -1,0 +1,20 @@
+.input{
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: .125rem #e1dcf2 solid;
+    border-radius: .3rem;
+    height: 3.1rem;
+    outline: none;
+    font-size: 1.125rem;
+    color: #a19ead;
+    padding-left: .5rem;
+}
+.input::placeholder{
+    color: #a19ead;
+}
+.input-medium{
+    width: 11.125rem;
+}
+.input-large{
+    width: 16.125rem;
+}
