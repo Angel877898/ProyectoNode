@@ -14,15 +14,22 @@
     box-sizing: border-box;
     font-size: 16px;
     font-family: 'Space Grotesk', sans-serif;
+    color: var(--main-text-color);
 }
 
 h2 {
     font-size: 2rem;
     text-align: center;
 }
-/* body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+h6, p {
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+body {
+    background: var(--secondary-bg-color);
+}
