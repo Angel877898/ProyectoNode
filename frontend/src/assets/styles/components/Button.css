@@ -1,0 +1,29 @@
+.button{
+    font-size: 1.125rem;
+    font-weight: bold;
+    border: .125rem #FFBF3B solid;
+    border-radius: .3rem;
+    height: 3rem;
+    outline: none;
+}
+.primary{
+    color: white;
+    background-color: #FFBF3B;
+}
+.secundary{
+    background-color: white;
+    color: #FFBF3B;
+}
+.medium{
+    width: 9.125rem;
+}
+.large{
+    width: 19.125rem;
+}
+.button:active { 
+    box-shadow: 3px 1.5px 8px 1px rgba(0, 0, 0, 0.24); 
+    transform: translateY(2px);
+} 
+.button:hover{
+    cursor: pointer;
+}

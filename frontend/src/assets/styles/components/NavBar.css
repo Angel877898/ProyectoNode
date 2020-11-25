@@ -1,0 +1,17 @@
+.header {
+    width: 100vw;
+    height: 8.9vh;
+    background-color: #4F3EC8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-titulo {
+    color: #FFFF;
+    padding-left: 1.5rem;
+    font-size: 2.5rem;
+}
+.header-icon{
+    padding-right:1.5rem ;
+}

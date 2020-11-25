@@ -1,0 +1,7 @@
+.icon:hover{
+    cursor: pointer;
+}
+.icon:active{
+    transform: translateX(2px);
+}
+

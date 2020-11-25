@@ -1,0 +1,22 @@
+.FloatButton{
+	position:fixed;
+	width:3.75rem;
+	height:3.75rem;
+	bottom:4.5rem;
+	right:9rem;
+	background-color:#FFBF3B;
+	border-radius:3.125rem;
+    box-shadow: .125rem .125rem .188rem #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+}
+.FloatButton:hover{
+    cursor: pointer;
+}
+.FloatButton:active{
+    transform: translateY(2px);
+}
+
