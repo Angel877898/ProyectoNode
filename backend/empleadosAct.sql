@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2020 at 05:33 PM
+-- Generation Time: Nov 25, 2020 at 04:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -30,8 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `telefono` varchar(13) NOT NULL,
   `correo` varchar(200) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
   `contrasena` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,10 +41,10 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `nombre`, `apellido`, `correo`, `contrasena`) VALUES
-(1, 'Manuel', 'Castillo', 'manuel@mail.com', '123456'),
-(2, 'Angel', 'Hernandez', 'angel@mail.com', '123456'),
-(3, 'Moisés', 'Pérez', 'moises@mail.com', '123456');
+INSERT INTO `admins` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `direccion`, `contrasena`) VALUES
+(1, 'Manuel', 'Castillo', '4421759865', 'manuel@mail.com', 'Ignacio Zaragoza, Col. Rancho Largo', '123456'),
+(2, 'Angel', 'Hernandez', '4426581548', 'angel@mail.com', 'Ignacio Zaragoza, Col. Rancho Largo', '123456'),
+(3, 'Moisés', 'Pérez', '4429995564', 'moises@mail.com', 'Ignacio Zaragoza, Col. Rancho Largo', '123456');
 
 -- --------------------------------------------------------
 
@@ -52,12 +54,19 @@ INSERT INTO `admins` (`id`, `nombre`, `apellido`, `correo`, `contrasena`) VALUES
 
 CREATE TABLE `empleados` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
-  `apellidos` varchar(100) DEFAULT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
   `telefono` varchar(13) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `direccion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `empleados`
+--
+
+INSERT INTO `empleados` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `direccion`) VALUES
+(1, 'Manuel', 'Castillo', '7122352271', 'jmanuel@mail.com', 'Ignacio Zaragoza');
 
 --
 -- Indexes for dumped tables
@@ -89,7 +98,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
