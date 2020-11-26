@@ -10,6 +10,7 @@ import Input from '../components/Input';
 import CardUser from '../components/CardUser';
 import CardHeader from '../components/CardHeader';
 import NotFound from '../components/NotFound';
+import Login from '../components/Login';
 
 const App = () => {
     
@@ -28,6 +29,7 @@ const App = () => {
         <CardHeader/>
         <Button type={'primary'} size={'medium'} />
         <NotFound />
+        <Login />
         
         <Icon src={logOut} />
         <FloatButton img={Plus} onClick={() =>  window.location.href='/notFound.js'} />
