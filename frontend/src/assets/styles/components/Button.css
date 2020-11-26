@@ -14,6 +14,26 @@
     background-color: white;
     color: #FFBF3B;
 }
+.success{
+    background-color: #8921FF;
+    color: #ffffff;
+    border: none !important;
+}
+.default{
+    background-color: #54FFD2;
+    color: #313131;
+    border: none !important;
+}
+.danger{
+    background-color: #FF5A29;
+    color: #ffffff;
+    border: none !important;
+}
+.warning{
+    background-color: #FFFE47;
+    color: #ffffff;
+    border: none !important;
+}
 .medium{
     width: 9.125rem;
 }

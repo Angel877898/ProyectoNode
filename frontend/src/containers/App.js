@@ -9,7 +9,7 @@ import '../assets/styles/containers/App.css'
 import Input from '../components/Input';
 import CardUser from '../components/CardUser';
 import CardHeader from '../components/CardHeader';
-import NotFound from '../components/notFound';
+import NotFound from '../components/NotFound';
 
 const App = () => {
     
