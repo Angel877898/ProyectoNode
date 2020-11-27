@@ -15,10 +15,10 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 
+app.get('/', (req, res, next) => res.status(200).json( {code: 1, message: 'Bienvenido'} ))
 app.use("/user",user)
 app.use(auth)
 
-app.get('/', (req, res, next) => res.status(200).json( {code: 1, message: 'Bienvenido'} ))
 app.use('/empleados', empleados)
 
 
