@@ -14,9 +14,9 @@ const NotFound = () => {
             <div className='right-container'>
                 <div className='login-container'>
                     <h3>Inicia sesion</h3>
-                    <Input name='Correo'  size={'large'}   />
-                    <Input name='Contraseña' size={'large'}  />
-                    {/* TODO checkbox */}<p>*TO DO Checkbox*</p>
+                    <Input name='Correo' size={'large'}   />
+                    <Input name='Contraseña' type={false} size={'large'}  />
+                    {/* TODO checkbox<p>*TO DO Checkbox*</p> */}
                     <Button type="primary" size="large" text='Iniciar Sesion' />
                 </div>
             </div>
