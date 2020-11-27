@@ -50,10 +50,10 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
     type: {
-        // action: 'add',
-        // message: 'Nuevo empleado'
-        action: 'del',
-        message: '¿Eliminar empleado?'
+        action: 'add',
+        message: 'Nuevo empleado'
+        // action: 'del',
+        // message: '¿Eliminar empleado?'
         // action: 'mod',
         // message: 'Modificar empleado'
     }

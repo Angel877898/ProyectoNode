@@ -7,11 +7,7 @@ const empleados = require('./routes/empleados')
 //Middlewares
 const auth = require('./middleware/auth')
 const cors = require('./middleware/cors')
-<<<<<<< HEAD
 const notFound = require('./middleware/notFound')
-=======
-
->>>>>>> origin/manuel
 
 app.use(cors)
 app.use(morgan('dev'))
