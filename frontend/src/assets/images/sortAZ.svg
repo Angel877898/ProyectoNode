@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-sortAZ">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="sortAZ" clip-path="url(#clip-sortAZ)">
+    <g id="Grupo_14" data-name="Grupo 14" transform="translate(-720 -896)">
+      <rect id="Rectángulo_17" data-name="Rectángulo 17" width="24" height="24" transform="translate(720 896)" fill="none"/>
+      <path id="Icon_awesome-sort-alpha-down" data-name="Icon awesome-sort-alpha-down" d="M9.429,19.393H6.857V3.107A.857.857,0,0,0,6,2.25H4.286a.857.857,0,0,0-.857.857V19.393H.857a.858.858,0,0,0-.6,1.463L4.538,26A.857.857,0,0,0,5.75,26l4.286-5.143A.858.858,0,0,0,9.429,19.393Zm12.857-3.429H15.429a.857.857,0,0,0-.857.857v1.714a.857.857,0,0,0,.857.857h3l-3.282,3.774a1.714,1.714,0,0,0-.575,1.281v.944a.857.857,0,0,0,.857.857h6.857a.857.857,0,0,0,.857-.857V23.679a.857.857,0,0,0-.857-.857h-3l3.282-3.774a1.714,1.714,0,0,0,.575-1.281v-.944A.857.857,0,0,0,22.286,15.964ZM23.95,11.39,20.775,2.819a.857.857,0,0,0-.807-.569h-2.22a.857.857,0,0,0-.807.569L13.765,11.39a.857.857,0,0,0,.807,1.145H15.9a.857.857,0,0,0,.816-.594l.237-.692h3.8l.236.692a.857.857,0,0,0,.818.594h1.331a.857.857,0,0,0,.807-1.145ZM17.979,8.25l.878-2.571.878,2.571Z" transform="translate(720 893.75)" fill="#1f1f1f"/>
+    </g>
+  </g>
+</svg>

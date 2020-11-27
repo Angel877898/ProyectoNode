@@ -1,18 +1,19 @@
 .button{
     font-size: 1.125rem;
     font-weight: bold;
-    border: .125rem #FFBF3B solid;
+    border: .125rem var(--secondary-color) solid;
     border-radius: .3rem;
     height: 3rem;
+    min-height: 3rem;
     outline: none;
 }
 .primary{
     color: white;
-    background-color: #FFBF3B;
+    background-color: var(--secondary-color);
 }
 .secundary{
     background-color: white;
-    color: #FFBF3B;
+    color: var(--secondary-color);
 }
 .medium{
     width: 9.125rem;
@@ -21,7 +22,7 @@
     width: 19.125rem;
 }
 .button:active { 
-    box-shadow: 3px 1.5px 8px 1px rgba(0, 0, 0, 0.24); 
+    box-shadow: 0 .1875rem .375rem var(--shadow-color);
     transform: translateY(2px);
 } 
 .button:hover{
