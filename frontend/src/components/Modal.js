@@ -1,12 +1,13 @@
 import React from 'react'
 import Input from './Input'
 import PropTypes from 'prop-types'
+import Button from './Button'
 import '../assets/styles/components/Modal.css'
 
 const Modal = ({ type }) => {
     return (
         <div className='modal-bg'>
-            <div className={ type.action === 'del' ? 'modal-container small' : 'modal-container large' }>
+            <div className={ `modal-container  ${type.action === 'del' ? 'm-small' : 'm-large'}` }>
                 <h2>{ type.message }</h2>
                 {
                     type.action === 'del'
@@ -14,8 +15,16 @@ const Modal = ({ type }) => {
                        <div>
                            <p>¿Estás seguro que deseas eliminar el registro? <br /> Esta acción no se puede revertir</p>
                            <div className='col-buttons'>
-                                <button>cancelar</button>
-                                <button>aceptar</button>
+                                <Button
+                                    text='Cancelar'
+                                    type='secundary'
+                                    size='medium'
+                                />
+                                <Button 
+                                    text='Aceptar'
+                                    type='primary'
+                                    size='medium'
+                                />
                             </div>
                        </div>    
                     )
@@ -32,8 +41,16 @@ const Modal = ({ type }) => {
                                     <Input id='email' name='Correo' type={ true }/>
                                 </div>
                                 <div className='col-buttons'>
-                                    <button>cancelar</button>
-                                    <button>aceptar</button>
+                                    <Button 
+                                        text='Cancelar'
+                                        type='secundary'
+                                        size='medium'
+                                    />
+                                    <Button 
+                                        text='Aceptar'
+                                        type='primary'
+                                        size='medium'
+                                    />
                                 </div>
                             </form>
                         </>
@@ -45,18 +62,7 @@ const Modal = ({ type }) => {
 }
 
 Modal.propTypes = {
-    type: PropTypes.object
-}
-
-Modal.defaultProps = {
-    type: {
-        action: 'add',
-        message: 'Nuevo empleado'
-        // action: 'del',
-        // message: '¿Eliminar empleado?'
-        // action: 'mod',
-        // message: 'Modificar empleado'
-    }
+    type: PropTypes.object.isRequired
 }
 
 export default Modal

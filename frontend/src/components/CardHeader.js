@@ -1,6 +1,7 @@
 import React from 'react'
 import Icon from './Icon'
-import Edit from '../assets/images/edit.svg'
+import SortAZ from '../assets/images/sortAZ.svg'
+import SortZA from '../assets/images/sortZA.svg'
 
 import '../assets/styles/components/CardHeader.css'
 
@@ -20,8 +21,8 @@ const CardHeader = () => {
                 <p>Dirección</p>
             </div>
             <div className="cardHeader__icons">
-                <Icon src={Edit} />
-                <Icon src={Edit} />
+                <Icon src={SortAZ} />
+                <Icon src={SortZA} />
             </div>
         </div>
     )

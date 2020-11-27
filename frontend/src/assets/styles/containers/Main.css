@@ -1,0 +1,46 @@
+/* navbar y contenido */
+.content {
+    display: flex;
+    height: 91.1vh;
+}
+/* contenido principal */
+.main-content {
+    padding: 4rem 8rem;
+    width: 75%;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+}
+/* titulo y barra de busqueda */
+.title-searchbar {
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* tarjetas de empleados */
+.employees {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: .5rem 0;
+    margin-bottom: 1rem;
+}
+/* boton para agregar empleado */
+.main-content > button {
+    position: relative;
+    bottom: 0 !important;
+    align-self: flex-end;
+    margin-right: .9375rem;    
+}
+/* scrollbar */
+.employees::-webkit-scrollbar {
+    width: .3125rem;
+}
+.employees::-webkit-scrollbar-thumb {
+    background: var(--shadow-color);
+    border-radius: .3125rem;
+}
