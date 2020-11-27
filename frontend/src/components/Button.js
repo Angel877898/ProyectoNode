@@ -8,7 +8,7 @@ const Button = ({type, size, text, onClick}) => {
         <>
         <button 
             className={`button 
-                ${type === 'primary' ? "primary" : "secundary"} 
+                ${type} 
                 ${size === 'medium' ? "medium" : "large"}`}
             onClick={onClick}
         >
@@ -18,7 +18,7 @@ const Button = ({type, size, text, onClick}) => {
     )
 }  
 const options={
-    types:['primary', 'secundary'],
+    types:['primary', 'secundary', 'success', 'default', 'danger', 'warning'],
     sizes:['medium','large']
 }
 
