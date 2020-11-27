@@ -1,4 +1,4 @@
-const morgan = require('morgan')
+
 const express = require('express')
 const app = express()
 //routes
@@ -10,7 +10,7 @@ const cors = require('./middleware/cors')
 const notFound = require('./middleware/notFound')
 
 app.use(cors)
-app.use(morgan('dev'))
+
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
