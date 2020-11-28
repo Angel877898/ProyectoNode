@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import '../assets/styles/components/Input.css'
 
 
-const Input = ({ name, type, search }) => {
+const Input = ({ name, type, search, value, onChange }) => {
     // name - nombre input 
     // type - tipo input -> 1:text / 0:password
     // search - input de busqueda -> true
 
-    const [inputValue, setInputValue] = useState('')
+    const [inputValue] =useState('')
     const [passVisibility, setPassVisibility] = useState(true)
 
     // iconos
@@ -17,9 +17,7 @@ const Input = ({ name, type, search }) => {
     const searchIcon = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A5A2BB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={inputValue && 'icon-active'}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 
 
-    const handleInputChange = ( e ) => {
-        setInputValue(e.target.value)
-    }
+    
     // hace visible la contrasena
     const handlePasswordVisibility = () => {
         setPassVisibility(!passVisibility)
@@ -34,13 +32,13 @@ const Input = ({ name, type, search }) => {
                         {/* Input texto o contrasena */}
                         <input
                             name={ name.toLowerCase() }
-                            value={ inputValue }
-                            className={ inputValue && 'input-active' }
-                            onChange={ handleInputChange }
+                            value={ value }
+                            className={ value && 'input-active' }
+                            onChange={ onChange }
                             type={ type ? 'text' : passVisibility ? 'password' : 'text' }
                         />
                         <label 
-                            className={ inputValue && 'lbl-active' }
+                            className={ value && 'lbl-active' }
                         >
                             { name }
                         </label>
@@ -62,10 +60,10 @@ const Input = ({ name, type, search }) => {
                         {/* Input busqueda */}
                         <input
                             name={ name.toLowerCase() }
-                            value={ inputValue }
+                            value={ value }
                             placeholder='Buscar'
-                            className= { `input-search ${ inputValue && 'input-active' } ` }
-                            onChange={ handleInputChange }
+                            className= { `input-search ${ value && 'input-active' } ` }
+                            onChange={ onChange }
                             type='text'
                         />
                         <div className='search-icon'>
