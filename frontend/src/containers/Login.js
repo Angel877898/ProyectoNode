@@ -33,7 +33,7 @@ const Login = ({ history }) => {
                     const login = async () => {
                         const status= await postLogin(data)
                         if(status){
-                            window.location.href='/empleados'
+                            window.location.href = '/empleados'
                         }
                     }
                     login()

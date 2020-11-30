@@ -12,10 +12,14 @@ import '../assets/styles/containers/Main.css'
 const Main = ({ history }) => {
     const [{showModalState, modalType}, setShowModalState] = useState({ showModalState: false, modalType: { action: '', message: '' } })
 
+    const [searchValue, setSearchValue] = useState('')
+    
+    const handleSearch = ({ target }) => {
+        setSearchValue(target.value)
+    }
+
     const { loading, data } = useFetch('https://proyecto-final-node.herokuapp.com/empleados')
-    // console.log(data)
-    // const { code, message } = !!data && data[0]
-    // console.log(message)
+
     // funcion para renderizar modal / modaType determina que modal sale
     const handleShowAddModal = () => {
         setShowModalState({
@@ -27,6 +31,12 @@ const Main = ({ history }) => {
                 message: 'Nuevo empleado'
             }
         })
+    }
+
+    const searching = ( searchValue ) => {
+        return function(x){
+            return x.nombre.toLowerCase().includes(searchValue) || !searchValue
+        }
     }
     // const handleShowDelModal = () => {
     //     setShowModalState({
@@ -58,6 +68,8 @@ const Main = ({ history }) => {
                         <Input 
                             name='Buscar' 
                             search={ true }
+                            value={ searchValue }
+                            onChange={ handleSearch }
                         />
                     </div>
                     <CardHeader />
@@ -66,7 +78,7 @@ const Main = ({ history }) => {
                             loading
                             ? <h1>Cargando...</h1>
                             : (
-                                data.map((emp) => (
+                                data.filter(searching(searchValue)).map((emp) => (
                                     <CardUser 
                                         key={ emp.id }
                                         name={ `${emp.nombre} ${emp.apellidos}` }
