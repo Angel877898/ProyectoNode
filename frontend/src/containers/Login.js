@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import isEmail from '../utils/verify/isEmail'
-import '../assets/styles/containers/Login.css';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import postLogin from '../utils/services/postLogin';
+import '../assets/styles/containers/Login.css';
 
 
-const NotFound = () => {
+const Login = ({ history }) => {
     const [correo, setCorreo] = useState('')
     const [password, setPassword] = useState('')
 
@@ -30,7 +30,9 @@ const NotFound = () => {
                     password: password
                 }
                 try{
-                    postLogin(data)
+                    postLogin(data) 
+                    history.replace('/empleados')
+                    history.replace('/empleados')
                 }catch(e){
                     console.error(e);
                 }
@@ -80,4 +82,4 @@ const NotFound = () => {
 
 }
 
-export default NotFound;
+export default Login;

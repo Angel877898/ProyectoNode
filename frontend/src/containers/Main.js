@@ -6,11 +6,16 @@ import CardHeader from '../components/CardHeader'
 import CardUser from '../components/CardUser'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
+import useFetch from '../utils/services/useFetch'
 import '../assets/styles/containers/Main.css'
 
-const Main = () => {
+const Main = ({ history }) => {
     const [{showModalState, modalType}, setShowModalState] = useState({ showModalState: false, modalType: { action: '', message: '' } })
 
+    const { loading, data } = useFetch('https://proyecto-final-node.herokuapp.com/empleados')
+    // console.log(data)
+    // const { code, message } = !!data && data[0]
+    // console.log(message)
     // funcion para renderizar modal / modaType determina que modal sale
     const handleShowAddModal = () => {
         setShowModalState({
@@ -44,7 +49,7 @@ const Main = () => {
 
     return (
         <>
-            <NavBar />
+            <NavBar history={ history }/>
             <div className='content'>
                 <Sidebar />
                 <div className='main-content'>
@@ -57,12 +62,22 @@ const Main = () => {
                     </div>
                     <CardHeader />
                     <div className='employees'>
-                        <CardUser 
-                            name='Juan Manuel Alba Castillo'
-                            tel='7122352271'
-                            email='mac.jmanuel@gmail.com'
-                            address='Ignacio Zaragoza, Col. Rancho Largo'
-                        />
+                        {
+                            loading
+                            ? <h1>Cargando...</h1>
+                            : (
+                                data.map((emp) => (
+                                    <CardUser 
+                                        key={ emp.id }
+                                        name={ `${emp.nombre} ${emp.apellidos}` }
+                                        tel={ emp.telefono }
+                                        email={ emp.correo }
+                                        address={ emp.direccion }
+                                    />
+                                ))
+                                    
+                            )
+                        }
                     </div>
                     <Button 
                         text='Nuevo empleado'
