@@ -30,9 +30,14 @@ const Login = ({ history }) => {
                     password: password
                 }
                 try{
-                    postLogin(data) 
-                    history.replace('/empleados')
-                    history.replace('/empleados')
+                    const login = async () => {
+                        const status= await postLogin(data)
+                        if(status){
+                            window.location.href='/empleados'
+                        }
+                    }
+                    login()
+                    
                 }catch(e){
                     console.error(e);
                 }

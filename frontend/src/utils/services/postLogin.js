@@ -19,13 +19,14 @@ export default  function postLogin(data) {
   })
   .then(res => res.json())
   .then(res => {
-      console.log(res);
       if(res.code === 401){
         window.alert("Usuario o contraseña incorrecto")
+        return false
       }
       else{
         if(res.code === 200){
           sessionStorage.setItem('token', res.message)
+          return true
         }
       }
   })
