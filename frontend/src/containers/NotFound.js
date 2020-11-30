@@ -1,7 +1,6 @@
 import React from 'react';
-
-import '../assets/styles/components/notFound.css';
-import Button from './Button';
+import Button from '../components/Button';
+import '../assets/styles/containers/NotFound.css';
 
 const NotFound = () => {
     return (

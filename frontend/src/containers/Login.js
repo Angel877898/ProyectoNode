@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import isEmail from '../utils/verify/isEmail'
-import '../assets/styles/components/Login.css';
+import '../assets/styles/containers/Login.css';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import postLogin from '../utils/services/postLogin';
@@ -64,9 +64,10 @@ const NotFound = () => {
                             name='Contraseña' 
                             size={'large'} 
                             value={password}
+                            type={ false }
                             onChange={handlePass}
                         />
-                        {/* TODO checkbox */}<p>*TO DO Checkbox*</p>
+                        {/* TODO checkbox<p>*TO DO Checkbox*</p> */}
                         <Button type="primary" size="large" text='Iniciar Sesion' />
                     
                     </div>

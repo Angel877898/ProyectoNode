@@ -1,13 +1,8 @@
 import React from 'react';
-import NotFound from '../components/notFound';
-import Main from './Main';
-import Login from '../containers/Login'
+import AppRouter from '../routes/AppRouter';
 const App = () => {
     return (
-        <>
-            
-            <Login/>
-        </>
+        <AppRouter />
     )
 }
 
