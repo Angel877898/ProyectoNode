@@ -53,3 +53,52 @@
     place-self: start;
     text-align: start;
 }
+
+@media (max-width: 750px) {
+    .sidebar {
+        
+        height: 7rem;
+        width: 100%;
+        
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .title-searchbar{
+        margin-top: 2rem;
+        text-align: center;
+    }
+    .title-searchbar h1{
+        
+        align-self: center;
+    }
+    .main-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        margin-bottom: 1rem;
+    }
+    .photo {
+        width: 3.5625rem;
+        height: 3.5625rem;
+        min-width: 3.5625rem;
+        min-height: 3.5625rem;
+        max-width: 3.5625rem;
+        max-height: 3.5625rem;
+        
+       
+    }
+    /* otoros datos */
+    .aditional-data {
+        display: none;
+        
+    }
+    
+    
+}
+@media (max-width: 700px) {
+    
+}

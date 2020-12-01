@@ -12,9 +12,9 @@
     margin-bottom: 1rem;
 }
 .cardUser-data{
-    width: calc(100% - .625rem);
+    width: calc(85% - .525rem);
     display: flex;
-    flex-direction: row;
+   
     align-items: center;
     justify-content: space-around;
     
@@ -77,3 +77,4 @@
     justify-content: space-around;
     align-items: center;
 }
+

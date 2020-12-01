@@ -44,3 +44,38 @@
     background: var(--shadow-color);
     border-radius: .3125rem;
 }
+
+
+
+@media (max-width: 1000px) {
+	
+	.title-searchbar{
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+    .main-content > button {
+        align-self: center;
+    }
+    .main-content {
+        padding: 2rem 4rem;
+        width: 75%;
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 750px) {
+    .content{
+       flex-direction: column;
+    }
+    .main-content {
+        padding: 0rem 0rem;
+        width: 100%;
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

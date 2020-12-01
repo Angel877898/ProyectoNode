@@ -45,5 +45,17 @@
     font-weight: bold;
 }
 
-
+@media (max-width: 1000px) {
+    .col-buttons{
+        margin-top: 10px;
+        
+    } 
+    .col-buttons button{
+        margin: .2rem;
+        
+    } 
+    .modal-container > h2{
+        font-family: 1rem;
+    }
+}
 

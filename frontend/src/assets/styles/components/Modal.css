@@ -79,3 +79,36 @@
 .no-show{
     display: none;
 } */
+@media (max-width: 800px) {
+    .col-buttons{
+        flex-direction: row;
+        margin: 0px;
+    } 
+    
+    .col-buttons button{
+        margin: .2rem;
+        
+    } 
+    .col-3{
+        align-items: center;
+        flex-direction: column;
+    }
+    .col-3 div{
+        width: 20rem;
+    }
+    .input-div{
+        margin: .33rem;
+        width: 320px;
+    }
+    .col-2{
+        align-items: center;
+        flex-direction: column;
+    }
+    .modal-container form {
+        margin: 0px 0px;
+        padding: 1rem;
+    }
+    .modal-container > h2{
+        font-size: 1.2rem;
+    }
+}
