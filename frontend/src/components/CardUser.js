@@ -39,20 +39,22 @@ const CardUser = ({ empId, name, tel, email, address }) => {
     })
 
     return (
-        <div className="cardUser" onClick={() => {
+        <div className="cardUser" >
+            <div className="cardUser-data" onClick={() => {
                 handleShowUserModal( name, tel, email, address )
             }}>
-            <div className="cardUser__name ">
-                <p>{name}</p>
-            </div>
-            <div className="cardUser__tel">
-                <p>{tel}</p>
-            </div>
-            <div className="cardUser__email">
-                <p>{email}</p>
-            </div>
-            <div className="cardUser__address">
-                <p>{address}</p>
+                <div className="cardUser__name ">
+                    <p>{name}</p>
+                </div>
+                <div className="cardUser__tel">
+                    <p>{tel}</p>
+                </div>
+                <div className="cardUser__email">
+                    <p>{email}</p>
+                </div>
+                <div className="cardUser__address">
+                    <p>{address}</p>
+                </div>
             </div>
             <div className="cardUser__icons">
                 <Icon 

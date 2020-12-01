@@ -98,3 +98,13 @@
     margin-left: 80px;
     margin-bottom: 40px;
 } */
+@media (max-width: 1000px) {
+    .side-banner{
+        display: none;
+    }
+    .login-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

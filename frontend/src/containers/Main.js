@@ -11,7 +11,7 @@ import { DataContext } from '../utils/DataContext'
 import '../assets/styles/containers/Main.css'
 
 const Main = ({ history }) => {
-
+    
     // input de busqueda
     const [searchValue, setSearchValue] = useState('')
     const handleSearch = ({ target }) => setSearchValue(target.value)
