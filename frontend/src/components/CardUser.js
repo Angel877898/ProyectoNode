@@ -19,13 +19,14 @@ const CardUser = ({ empId, name, tel, email, address }) => {
     })
     
     // modal para editar
-    const handleShowModModal = ( id, name ) => setShowModalState({
+    const handleShowModModal = ( id, name, tel, email, address ) => setShowModalState({
         showModalState: true,
         modalType: {
             action: 'mod',
             message: `Modificar empleado ${ name }`
         },
-        empId: id
+        empId: id,
+        name, tel, email, address
     })
 
     return (
@@ -45,7 +46,7 @@ const CardUser = ({ empId, name, tel, email, address }) => {
             <div className="cardUser__icons">
                 <Icon 
                     src={ Edit } 
-                    onClick={ () => handleShowModModal( empId, name ) }    
+                    onClick={ () => handleShowModModal( empId, name, tel, email, address ) }    
                 />
                 <Icon 
                     src={ Delete }

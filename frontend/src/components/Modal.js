@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 import { DataContext } from '../utils/DataContext'
 import { postAdd } from '../utils/services/postAdd'
+import { putUpdt } from '../utils/services/putUpdt'
 import '../assets/styles/components/Modal.css'
 
 const params = {
@@ -17,7 +18,7 @@ const params = {
 const Modal = ({ type, history }) => {
 
     // oculta modal
-    const { empId, setShowModalState } = useContext(DataContext)
+    const { empId, name, tel, email, address, setShowModalState } = useContext(DataContext)
     const handleShowModal = () => setShowModalState({ showModalState: false })
     
     // borrar empleado
@@ -35,11 +36,11 @@ const Modal = ({ type, history }) => {
     }
 
     
-    const [nombre, setNombre] = useState('')
-    const [apellidos, setApellidos] = useState('')
-    const [telefono, setTelefono] = useState('')
-    const [direccion, setDireccion] = useState('')
-    const [correo, setCorreo] = useState('')
+    const [nombre, setNombre] = useState(type.action==='mod' ? `${name.split(' ')[0]}` : '')
+    const [apellidos, setApellidos] = useState(type.action==='mod' ? `${name.split(' ')[1]}` : '')
+    const [telefono, setTelefono] = useState(type.action==='mod' ? `${tel}` : '')
+    const [direccion, setDireccion] = useState(type.action==='mod' ? `${address}` : '')
+    const [correo, setCorreo] = useState(type.action==='mod' ? `${email}` : '')
 
     const handleNombre = ({ target }) => {
         setNombre(target.value)
@@ -61,22 +62,38 @@ const Modal = ({ type, history }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         datos = { nombre, apellidos, telefono, correo, direccion}
-        postAdd(datos)
+        if(type.action === 'add'){
+            postAdd(datos)
             .then(res => {
-                setShowModalState({ showModalState: false })
-                history.replace('/empleados')
+                if(res.code === 500) {
+                    res.campos.map((campo) => console.log(`${campo.campo} invalido`))
+                }
+                if(res.code === 201) {
+                    console.log(res.code)
+                    console.log(res.message)
+                    setShowModalState({ showModalState: false })
+                    history.replace('/empleados')
+                }
+
             })
             .catch(err => console.log(err))    
-    }
+        }
+        else if(type.action === 'mod') {
+            putUpdt(datos, empId)
+            .then(res => {
+                if(res.code === 500) {
+                    res.campos.map((campo) => console.log(`${campo.campo} invalido`))
+                }
+                if(res.code === 200) {
+                    console.log(res.code)
+                    console.log(res.message)
+                    setShowModalState({ showModalState: false })
+                    history.replace('/empleados')
+                }
 
-    // actualizar empleado
-    const updtEmp = () => {
-        // console.log('click actualizar')
-    }
-
-    // agregar empleado
-    const addEmp = () => {
-        // console.log('click nuevo')
+            })
+            .catch(err => console.log(err))    
+        }
     }
 
     return (
@@ -122,13 +139,8 @@ const Modal = ({ type, history }) => {
                                         type='secundary'
                                         size='medium'
                                         onClick={ handleShowModal }
-                                    />
-                                    {
-                                        type.action === 'mod'
-                                        ? <Button text='Aceptar' type='primary' size='medium' onClick={ updtEmp } />
-                                        : <Button text='Aceptar' type='primary' size='medium' onClick={ addEmp } />
-                                    }
-                                    
+                                    /> 
+                                    <Button text='Aceptar' type='primary' size='medium'/>
                                 </div>
                             </form>
                         </>
