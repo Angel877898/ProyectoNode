@@ -3,8 +3,8 @@ import Input from './Input'
 import PropTypes from 'prop-types'
 import Button from './Button'
 import { DataContext } from '../utils/DataContext'
-import '../assets/styles/components/Modal.css'
 import { postAdd } from '../utils/services/postAdd'
+import '../assets/styles/components/Modal.css'
 
 const params = {
     method: 'DELETE',
@@ -57,25 +57,16 @@ const Modal = ({ type, history }) => {
         setCorreo(target.value)
     }
 
-    let data = {}
+    let datos = {}
     const handleSubmit = (e) => {
         e.preventDefault()
-        data = { nombre, apellidos, telefono, correo, direccion}
-        if(Object.keys(data).length !== 0) {
-            try{
-                const add = async () => {
-                    const res = await postAdd(data)
-                    console.log(res)
-                }
-                add()
-            } 
-            catch {
-                console.log(e)
-            }
-        }
-        else {
-            console.log('hay campos incompletos')
-        }
+        datos = { nombre, apellidos, telefono, correo, direccion}
+        postAdd(datos)
+            .then(res => {
+                setShowModalState({ showModalState: false })
+                history.replace('/empleados')
+            })
+            .catch(err => console.log(err))    
     }
 
     // actualizar empleado
