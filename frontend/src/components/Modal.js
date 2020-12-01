@@ -6,6 +6,7 @@ import { DataContext } from '../utils/DataContext'
 import { postAdd } from '../utils/services/postAdd'
 import { putUpdt } from '../utils/services/putUpdt'
 import '../assets/styles/components/Modal.css'
+import ModalUser from './ModalUser'
 
 const params = {
     method: 'DELETE',
@@ -98,55 +99,62 @@ const Modal = ({ type, history }) => {
 
     return (
         <div className='modal-bg'>
-            <div className={ `modal-container  ${type.action === 'del' ? 'm-small' : 'm-large'}` }>
-                <h2>{ type.message }</h2>
-                {
-                    type.action === 'del'
-                    ? (
-                       <div>
-                           <p>¿Estás seguro que deseas eliminar el registro? <br /> Esta acción no se puede revertir</p>
-                           <div className='col-buttons'>
-                                <Button
-                                    text='Cancelar'
-                                    type='secundary'
-                                    size='medium'
-                                    onClick={ handleShowModal }
-                                />
-                                <Button 
-                                    text='Aceptar'
-                                    type='primary'
-                                    size='medium'
-                                    onClick={ delEmp }
-                                />
-                            </div>
-                       </div>    
-                    )
-                    : (
-                        <>
-                            <form onSubmit={ handleSubmit }>
-                                <div className='col-3'>
-                                    <Input value={ nombre } id='nombre' name='Nombre' onChange={ handleNombre }/>
-                                    <Input value={ apellidos } id='apellidos' name='Apellido' onChange={ handleApellidos }/>
-                                    <Input value={ telefono } id='telefono' name='Teléfono' onChange={ handleTelefono }/>
-                                </div>
-                                <div className='col-2'>
-                                    <Input value={ direccion } id='direccion' name='Dirección' onChange={ handleDireccion }/>
-                                    <Input value={ correo } id='correo' name='Correo' onChange={ handleCorreo }/>
-                                </div>
+            {
+                type.action === 'user'
+                ? <ModalUser />
+                : (
+                    <div className={ `modal-container  ${type.action === 'del' ? 'm-small' : 'm-large'}` }>
+                        <h2>{ type.message }</h2>
+                        {
+                            type.action === 'del'
+                            ? (
+                            <div>
+                                <p>¿Estás seguro que deseas eliminar el registro? <br /> Esta acción no se puede revertir</p>
                                 <div className='col-buttons'>
-                                    <Button 
-                                        text='Cancelar'
-                                        type='secundary'
-                                        size='medium'
-                                        onClick={ handleShowModal }
-                                    /> 
-                                    <Button text='Aceptar' type='primary' size='medium'/>
-                                </div>
-                            </form>
-                        </>
-                    )
-                }
-            </div>
+                                        <Button
+                                            text='Cancelar'
+                                            type='secundary'
+                                            size='medium'
+                                            onClick={ handleShowModal }
+                                        />
+                                        <Button 
+                                            text='Aceptar'
+                                            type='primary'
+                                            size='medium'
+                                            onClick={ delEmp }
+                                        />
+                                    </div>
+                            </div>    
+                            )
+                            : (
+                                <>
+                                    <form onSubmit={ handleSubmit }>
+                                        <div className='col-3'>
+                                            <Input value={ nombre } id='nombre' name='Nombre' onChange={ handleNombre }/>
+                                            <Input value={ apellidos } id='apellidos' name='Apellido' onChange={ handleApellidos }/>
+                                            <Input value={ telefono } id='telefono' name='Teléfono' onChange={ handleTelefono }/>
+                                        </div>
+                                        <div className='col-2'>
+                                            <Input value={ direccion } id='direccion' name='Dirección' onChange={ handleDireccion }/>
+                                            <Input value={ correo } id='correo' name='Correo' onChange={ handleCorreo }/>
+                                        </div>
+                                        <div className='col-buttons'>
+                                            <Button 
+                                                text='Cancelar'
+                                                type='secundary'
+                                                size='medium'
+                                                onClick={ handleShowModal }
+                                            /> 
+                                            <Button text='Aceptar' type='primary' size='medium'/>
+                                        </div>
+                                    </form>
+                                </>
+                            )
+                        }
+                    </div>
+                )
+            }
+            
         </div>
     )
 }

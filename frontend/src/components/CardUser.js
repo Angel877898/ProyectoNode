@@ -29,8 +29,19 @@ const CardUser = ({ empId, name, tel, email, address }) => {
         name, tel, email, address
     })
 
+    // modal para editar
+    const handleShowUserModal = ( name, tel, email, address ) => setShowModalState({
+        showModalState: true,
+        modalType: {
+            action: 'user'
+        },
+        name, tel, email, address
+    })
+
     return (
-        <div className="cardUser">
+        <div className="cardUser" onClick={() => {
+                handleShowUserModal( name, tel, email, address )
+            }}>
             <div className="cardUser__name ">
                 <p>{name}</p>
             </div>
