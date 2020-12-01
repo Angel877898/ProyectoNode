@@ -1,35 +1,33 @@
-import React from 'react'
-import '../assets/styles/components/ModalUser.css'
+import React, { useContext } from 'react'
 import Button from './Button'
+import { DataContext } from '../utils/DataContext'
+import '../assets/styles/components/ModalUser.css'
 
-const ModalUser = ({ type }) => {
+const ModalUser = ( ) => {
+    const { name, tel, email, address, setShowModalState } = useContext(DataContext)
+    const handleShowModal = () => setShowModalState({ showModalState: false })
     return (
-        <div className='modal-bg'>
-            <div className={'modal-container large'}>
-                <h2>Datos del Usuario</h2>
-                    <div>
-                        <div className="modal-container-data bold">
-                            <p>Angel Uriel Hernandez Maldonado</p>
-                        </div>
-                        <div className="modal-container-data">
-                            <p>4871266303</p>
-                        </div>
-                        <div className="modal-container-data">
-                        <p>Av de las ciencias #154 juriquilla, colonia rancho largo, mexico, queretaro jejeje </p>
-                        </div>
-                        <div className="modal-container-data">
-                            <p>angurie_2008@hotmail.com</p>
-                        </div>
-                        <div className='col-buttons'>
-                            <Button size="large" type="primary" text="Acpetar" />
-                            
-                        </div>
+        <div className={'modal-container large'}>
+            <h2>Datos de { name }</h2>
+                <div>
+                    <div className="modal-container-data bold">
+                        <p>{ name }</p>
                     </div>
-            </div>
+                    <div className="modal-container-data">
+                        <p>{ tel }</p>
+                    </div>
+                    <div className="modal-container-data">
+                    <p>{ address }</p>
+                    </div>
+                    <div className="modal-container-data">
+                        <p>{ email }</p>
+                    </div>
+                    <div className='col-buttons'>
+                        <Button size="large" type="primary" text="Acpetar" onClick={ handleShowModal}/>
+                    </div>
+                </div>
         </div>
     )
 }
-
-
 
 export default ModalUser

@@ -1,8 +1,4 @@
 import React from 'react'
-import Icon from './Icon'
-import SortAZ from '../assets/images/sortAZ.svg'
-import SortZA from '../assets/images/sortZA.svg'
-
 import '../assets/styles/components/CardHeader.css'
 
 const CardHeader = () => {
@@ -21,8 +17,6 @@ const CardHeader = () => {
                 <p>Dirección</p>
             </div>
             <div className="cardHeader__icons">
-                <Icon src={SortAZ} />
-                <Icon src={SortZA} />
             </div>
         </div>
     )
