@@ -57,7 +57,8 @@ const Main = ({ history }) => {
                                     <CardUser 
                                         key={ emp.id }
                                         empId={ emp.id }
-                                        name={ `${emp.nombre} ${emp.apellidos}` }
+                                        name={ emp.nombre }
+                                        lastname={ emp.apellidos }
                                         tel={ emp.telefono }
                                         email={ emp.correo }
                                         address={ emp.direccion }

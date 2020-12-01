@@ -19,7 +19,7 @@ const params = {
 const Modal = ({ type, history }) => {
 
     // oculta modal
-    const { empId, name, tel, email, address, setShowModalState } = useContext(DataContext)
+    const { empId, name, lastname, tel, email, address, setShowModalState } = useContext(DataContext)
     const handleShowModal = () => setShowModalState({ showModalState: false })
     
     // borrar empleado
@@ -37,8 +37,8 @@ const Modal = ({ type, history }) => {
     }
 
     
-    const [nombre, setNombre] = useState(type.action==='mod' ? `${name.split(' ')[0]}` : '')
-    const [apellidos, setApellidos] = useState(type.action==='mod' ? `${name.split(' ')[1]}` : '')
+    const [nombre, setNombre] = useState(type.action==='mod' ? `${name}` : '')
+    const [apellidos, setApellidos] = useState(type.action==='mod' ? `${lastname}` : '')
     const [telefono, setTelefono] = useState(type.action==='mod' ? `${tel}` : '')
     const [direccion, setDireccion] = useState(type.action==='mod' ? `${address}` : '')
     const [correo, setCorreo] = useState(type.action==='mod' ? `${email}` : '')

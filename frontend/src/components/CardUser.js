@@ -5,7 +5,7 @@ import Delete from '../assets/images/delete.svg'
 import { DataContext } from '../utils/DataContext'
 import '../assets/styles/components/CardUser.css'
 
-const CardUser = ({ empId, name, tel, email, address }) => {
+const CardUser = ({ empId, name, lastname, tel, email, address }) => {
     // estado de modal
     const { setShowModalState} = useContext(DataContext)
     // modal para eliminar
@@ -19,32 +19,32 @@ const CardUser = ({ empId, name, tel, email, address }) => {
     })
     
     // modal para editar
-    const handleShowModModal = ( id, name, tel, email, address ) => setShowModalState({
+    const handleShowModModal = ( id, name, lastname, tel, email, address ) => setShowModalState({
         showModalState: true,
         modalType: {
             action: 'mod',
             message: `Modificar empleado ${ name }`
         },
         empId: id,
-        name, tel, email, address
+        name, lastname, tel, email, address
     })
 
     // modal para editar
-    const handleShowUserModal = ( name, tel, email, address ) => setShowModalState({
+    const handleShowUserModal = ( name, lastname, tel, email, address ) => setShowModalState({
         showModalState: true,
         modalType: {
             action: 'user'
         },
-        name, tel, email, address
+        name, lastname, tel, email, address
     })
 
     return (
         <div className="cardUser" >
             <div className="cardUser-data" onClick={() => {
-                handleShowUserModal( name, tel, email, address )
+                handleShowUserModal( name, lastname, tel, email, address )
             }}>
                 <div className="cardUser__name ">
-                    <p>{name}</p>
+                    <p>{`${name} ${lastname}`}</p>
                 </div>
                 <div className="cardUser__tel">
                     <p>{tel}</p>
@@ -59,7 +59,7 @@ const CardUser = ({ empId, name, tel, email, address }) => {
             <div className="cardUser__icons">
                 <Icon 
                     src={ Edit } 
-                    onClick={ () => handleShowModModal( empId, name, tel, email, address ) }    
+                    onClick={ () => handleShowModModal( empId, name, lastname, tel, email, address ) }    
                 />
                 <Icon 
                     src={ Delete }
