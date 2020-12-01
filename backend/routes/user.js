@@ -13,11 +13,15 @@ user.post("/login", async (req,res,next) => {
         const isEmail = validateEmail(email)
         if(isEmail) {
             if(rows.length ==1) {
+                console.log(rows[0]);
                 const token = jwt.sign({
                     id: rows[0].id,
                     mail: rows[0].correo,
                     name: rows[0].nombre,
-                    last_name: rows[0].apellido
+                    last_name: rows[0].apellidos,
+                    tel: rows[0].telefono,
+                    address: rows[0].direccion
+                    
                 }, "debugkey")
                 return res.status(200).json({code:200, message:token})
             }else {
