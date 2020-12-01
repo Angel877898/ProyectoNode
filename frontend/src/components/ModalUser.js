@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
-import { DataContext } from '../utils/DataContext'
 import Button from './Button'
+import { DataContext } from '../utils/DataContext'
 import '../assets/styles/components/ModalUser.css'
 
 const ModalUser = ( ) => {
-    
     const { name, tel, email, address, setShowModalState } = useContext(DataContext)
     const handleShowModal = () => setShowModalState({ showModalState: false })
     return (
@@ -30,7 +29,5 @@ const ModalUser = ( ) => {
         </div>
     )
 }
-
-
 
 export default ModalUser
