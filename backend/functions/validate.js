@@ -1,5 +1,5 @@
 const isName = (name) => {
-    const re = /^([A-Za-z]+)$/;
+    const re = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g
     return re.test(String(name).toLowerCase())
 }
 
