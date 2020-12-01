@@ -9,16 +9,15 @@ const CardUser = ({ empId, name, tel, email, address }) => {
     // estado de modal
     const { setShowModalState} = useContext(DataContext)
     // modal para eliminar
-    const handleShowDelModal = ( id, name ) => {
-        setShowModalState({
-            showModalState: true,
-            modalType: {
-                action: 'del',
-                message: `¿Eliminar empleado ${ name }?`
-            }, 
-            empId: id
-        })
-    }
+    const handleShowDelModal = ( id, name ) => setShowModalState({
+        showModalState: true,
+        modalType: {
+            action: 'del',
+            message: `¿Eliminar empleado ${ name }?`
+        }, 
+        empId: id
+    })
+    
     // modal para editar
     const handleShowModModal = ( id, name ) => setShowModalState({
         showModalState: true,
@@ -26,7 +25,7 @@ const CardUser = ({ empId, name, tel, email, address }) => {
             action: 'mod',
             message: `Modificar empleado ${ name }`
         },
-         empId: id
+        empId: id
     })
 
     return (

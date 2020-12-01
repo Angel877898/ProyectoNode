@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Input from './Input'
 import PropTypes from 'prop-types'
 import Button from './Button'
 import { DataContext } from '../utils/DataContext'
 import '../assets/styles/components/Modal.css'
+import { postAdd } from '../utils/services/postAdd'
 
 const params = {
     method: 'DELETE',
@@ -11,9 +12,9 @@ const params = {
         'Accept': 'application/json',
         'Authorization': `bearer ${sessionStorage.getItem('token')}`
     }
-  }
+}
 
-const Modal = ({ type }) => {
+const Modal = ({ type, history }) => {
 
     // oculta modal
     const { empId, setShowModalState } = useContext(DataContext)
@@ -28,9 +29,63 @@ const Modal = ({ type }) => {
             .then(data => {
                 if(data.code === 200) {
                     setShowModalState({ showModalState: false })
-                    window.location.reload(true)
+                    history.replace('/empleados')
                 }
             })
+    }
+
+    
+    const [nombre, setNombre] = useState('')
+    const [apellidos, setApellidos] = useState('')
+    const [telefono, setTelefono] = useState('')
+    const [direccion, setDireccion] = useState('')
+    const [correo, setCorreo] = useState('')
+
+    const handleNombre = ({ target }) => {
+        setNombre(target.value)
+    }
+    const handleApellidos = ({ target }) => {
+        setApellidos(target.value)
+    }
+    const handleTelefono = ({ target }) => {
+        setTelefono(target.value)
+    }
+    const handleDireccion = ({ target }) => {
+        setDireccion(target.value)
+    }
+    const handleCorreo = ({ target }) => {
+        setCorreo(target.value)
+    }
+
+    let data = {}
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        data = { nombre, apellidos, telefono, correo, direccion}
+        if(Object.keys(data).length !== 0) {
+            try{
+                const add = async () => {
+                    const res = await postAdd(data)
+                    console.log(res)
+                }
+                add()
+            } 
+            catch {
+                console.log(e)
+            }
+        }
+        else {
+            console.log('hay campos incompletos')
+        }
+    }
+
+    // actualizar empleado
+    const updtEmp = () => {
+        // console.log('click actualizar')
+    }
+
+    // agregar empleado
+    const addEmp = () => {
+        // console.log('click nuevo')
     }
 
     return (
@@ -60,15 +115,15 @@ const Modal = ({ type }) => {
                     )
                     : (
                         <>
-                            <form>
+                            <form onSubmit={ handleSubmit }>
                                 <div className='col-3'>
-                                    <Input id='name' name='Nombre' type={ true }/>
-                                    <Input id='lastname' name='Apellido' type={ true }/>
-                                    <Input id='phone' name='Teléfono' type={ true }/>
+                                    <Input value={ nombre } id='nombre' name='Nombre' onChange={ handleNombre }/>
+                                    <Input value={ apellidos } id='apellidos' name='Apellido' onChange={ handleApellidos }/>
+                                    <Input value={ telefono } id='telefono' name='Teléfono' onChange={ handleTelefono }/>
                                 </div>
                                 <div className='col-2'>
-                                    <Input id='addr' name='Dirección' type={ true }/>
-                                    <Input id='email' name='Correo' type={ true }/>
+                                    <Input value={ direccion } id='direccion' name='Dirección' onChange={ handleDireccion }/>
+                                    <Input value={ correo } id='correo' name='Correo' onChange={ handleCorreo }/>
                                 </div>
                                 <div className='col-buttons'>
                                     <Button 
@@ -77,11 +132,12 @@ const Modal = ({ type }) => {
                                         size='medium'
                                         onClick={ handleShowModal }
                                     />
-                                    <Button 
-                                        text='Aceptar'
-                                        type='primary'
-                                        size='medium'
-                                    />
+                                    {
+                                        type.action === 'mod'
+                                        ? <Button text='Aceptar' type='primary' size='medium' onClick={ updtEmp } />
+                                        : <Button text='Aceptar' type='primary' size='medium' onClick={ addEmp } />
+                                    }
+                                    
                                 </div>
                             </form>
                         </>

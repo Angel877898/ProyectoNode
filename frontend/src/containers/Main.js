@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import NavBar from '../components/NavBar'
 import Sidebar from '../components/Sidebar'
 import Input from '../components/Input'
@@ -19,8 +19,6 @@ const Main = ({ history }) => {
 
     // peticion get empleados
     const { loading, data } = useFetch('https://proyecto-final-node.herokuapp.com/empleados')
-    useEffect(() => {
-    }, [ data ])
 
     // estado de modal en context
     const { showModalState, modalType, setShowModalState} = useContext(DataContext)
@@ -29,9 +27,7 @@ const Main = ({ history }) => {
     const handleShowAddModal = () => setShowModalState({
         showModalState: true,
         modalType: {
-            // tipo de modal
             action: 'add',
-            // titulo de modal
             message: 'Nuevo empleado'
         }
     })
@@ -76,7 +72,7 @@ const Main = ({ history }) => {
                     />
                 </div>                
             </div>
-            { showModalState && <Modal type={ modalType }/>}
+            { showModalState && <Modal type={ modalType } history={ history }/>}
         </>
     )
 }
