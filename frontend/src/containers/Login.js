@@ -4,7 +4,6 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import postLogin from '../utils/services/postLogin';
 import '../assets/styles/containers/Login.css';
-import RequestStatusSnackbar from '../components/RequestStatusSnackbar';
 
 
 const Login = ({ history }) => {

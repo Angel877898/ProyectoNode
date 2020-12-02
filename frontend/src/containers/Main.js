@@ -7,10 +7,9 @@ import CardUser from '../components/CardUser'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
 import useFetch from '../utils/services/useFetch'
+import Loading from '../components/Loading'
 import { DataContext } from '../utils/DataContext'
 import '../assets/styles/containers/Main.css'
-import Loading from '../components/Loading'
-import RequestStatusSnackbar from '../components/RequestStatusSnackbar'
 
 const Main = ({ history }) => {
     
@@ -55,17 +54,22 @@ const Main = ({ history }) => {
                             loading
                             ? <Loading />
                             : (
-                                data.filter( searching(searchValue) ).map((emp) => (
-                                    <CardUser 
-                                        key={ emp.id }
-                                        empId={ emp.id }
-                                        name={ emp.nombre }
-                                        lastname={ emp.apellidos }
-                                        tel={ emp.telefono }
-                                        email={ emp.correo }
-                                        address={ emp.direccion }
-                                    />
-                                ))     
+                                data.length > 0
+                                ? (
+                                    data.filter( searching(searchValue) ).map((emp) => (
+                                        <CardUser 
+                                            key={ emp.id }
+                                            empId={ emp.id }
+                                            name={ emp.nombre }
+                                            lastname={ emp.apellidos }
+                                            tel={ emp.telefono }
+                                            email={ emp.correo }
+                                            address={ emp.direccion }
+                                        />
+                                    ))    
+                                )
+                                : <div className='loading-effect'> <p>No se encontraron usuarios</p></div>
+
                             )
                         }
                         {/* <Loading /> */}
@@ -77,7 +81,6 @@ const Main = ({ history }) => {
                 </div>                
             </div>
             { showModalState && <Modal type={ modalType } history={ history }/>}
-            {/* <RequestStatusSnackbar /> */}
         </>
     )
 }
