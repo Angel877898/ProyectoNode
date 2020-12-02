@@ -8,7 +8,7 @@ const CardHeader = () => {
                 <p>Nombre</p>
             </div>
             <div className="cardHeader__tel">
-                <p>Tel.</p>
+                <p>Cel.</p>
             </div>
             <div className="cardHeader__email">
                 <p>Correo</p>
