@@ -9,6 +9,7 @@ import Modal from '../components/Modal'
 import useFetch from '../utils/services/useFetch'
 import { DataContext } from '../utils/DataContext'
 import '../assets/styles/containers/Main.css'
+import Loading from '../components/Loading'
 
 const Main = ({ history }) => {
     
@@ -51,7 +52,7 @@ const Main = ({ history }) => {
                     <div className='employees'>
                         {
                             loading
-                            ? <h1>Cargando...</h1>
+                            ? <Loading />
                             : (
                                 data.filter( searching(searchValue) ).map((emp) => (
                                     <CardUser 
@@ -66,6 +67,7 @@ const Main = ({ history }) => {
                                 ))     
                             )
                         }
+                        {/* <Loading /> */}
                     </div>
                     <Button 
                         text='Nuevo empleado'
