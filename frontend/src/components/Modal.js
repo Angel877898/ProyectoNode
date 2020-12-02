@@ -7,6 +7,7 @@ import { postAdd } from '../utils/services/postAdd'
 import { putUpdt } from '../utils/services/putUpdt'
 import '../assets/styles/components/Modal.css'
 import ModalUser from './ModalUser'
+import RequestStatusSnackbar from './RequestStatusSnackbar'
 
 const params = {
     method: 'DELETE',
@@ -19,17 +20,22 @@ const params = {
 const Modal = ({ type, history }) => {
 
     // oculta modal
-    const { empId, name, lastname, tel, email, address, setShowModalState } = useContext(DataContext)
+    const { empId, name, lastname, tel, email, address, setShowModalState, snackbarState, status, message, setSnackbarState } = useContext(DataContext)
     const handleShowModal = () => setShowModalState({ showModalState: false })
     
     // borrar empleado
     const delEmp = () => {
-        console.log( empId )
         const url = `https://proyecto-final-node.herokuapp.com/empleados/${ empId }`
         fetch(url, params)
             .then(res => res.json())
             .then(data => {
                 if(data.code === 200) {
+                    setSnackbarState({
+                        snackbarState: true,
+                        status: 'success',
+                        message: data.message
+                    })
+                    setSnackbarState({ snackbarState: false })
                     setShowModalState({ showModalState: false })
                     history.replace('/empleados')
                 }
@@ -67,15 +73,30 @@ const Modal = ({ type, history }) => {
             postAdd(datos)
             .then(res => {
                 if(res.code === 500) {
-                    res.campos.map((campo) => console.log(`${campo.campo} invalido`))
+                    setSnackbarState({
+                        snackbarState: true,
+                        status: 'fail',
+                        message: 'Campos vacíos'
+                    })
+                    if(res.message === 'Hay datos no válidos') {
+                        let campos = res.campos.map(campo => campo.campo)
+                        setSnackbarState({
+                            snackbarState: true,
+                            status: 'fail',
+                            message: `${campos.join()} no ${campos.length > 1 ? 'válidos' : 'valido' } `
+                        })  
+                    }
                 }
                 if(res.code === 201) {
-                    console.log(res.code)
-                    console.log(res.message)
+                    setSnackbarState({
+                        snackbarState: true,
+                        status: 'success',
+                        message: res.message
+                    })
                     setShowModalState({ showModalState: false })
+                    setSnackbarState({ snackbarState: false })
                     history.replace('/empleados')
                 }
-
             })
             .catch(err => console.log(err))    
         }
@@ -83,15 +104,30 @@ const Modal = ({ type, history }) => {
             putUpdt(datos, empId)
             .then(res => {
                 if(res.code === 500) {
-                    res.campos.map((campo) => console.log(`${campo.campo} invalido`))
+                    setSnackbarState({
+                        snackbarState: true,
+                        status: 'fail',
+                        message: 'Campos vacíos'
+                    })
+                    if(res.message === 'Hay datos no válidos') {
+                        let campos = res.campos.map(campo => campo.campo)
+                        setSnackbarState({
+                            snackbarState: true,
+                            status: 'fail',
+                            message: `${campos.join()} no ${campos.length > 1 ? 'válidos' : 'valido' } `
+                        })  
+                    }
                 }
                 if(res.code === 200) {
-                    console.log(res.code)
-                    console.log(res.message)
+                    setSnackbarState({
+                        snackbarState: true,
+                        status: 'success',
+                        message: res.message
+                    })
                     setShowModalState({ showModalState: false })
+                    setSnackbarState({ snackbarState: false })
                     history.replace('/empleados')
                 }
-
             })
             .catch(err => console.log(err))    
         }
@@ -115,7 +151,10 @@ const Modal = ({ type, history }) => {
                                             text='Cancelar'
                                             type='secundary'
                                             size='medium'
-                                            onClick={ handleShowModal }
+                                            onClick={ () => {
+                                                handleShowModal()
+                                                setSnackbarState({ snackbarState: false })
+                                            }}
                                         />
                                         <Button 
                                             text='Aceptar'
@@ -143,7 +182,10 @@ const Modal = ({ type, history }) => {
                                                 text='Cancelar'
                                                 type='secundary'
                                                 size='medium'
-                                                onClick={ handleShowModal }
+                                                onClick={() => {
+                                                    handleShowModal()
+                                                    setSnackbarState({ snackbarState: false })
+                                                }}
                                             /> 
                                             <Button text='Aceptar' type='primary' size='medium'/>
                                         </div>
@@ -154,7 +196,11 @@ const Modal = ({ type, history }) => {
                     </div>
                 )
             }
-            
+            {
+                snackbarState
+                ? <RequestStatusSnackbar status={ status } message={ message }/>
+                : <></>
+            }
         </div>
     )
 }

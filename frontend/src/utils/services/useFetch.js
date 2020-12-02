@@ -14,7 +14,7 @@ const useFetch = ( url) => {
             .then(res => res.json())
             .then(data => {
                 setState({
-                    data: data.message, 
+                    data: data.message !== 'No se encontraron usuarios' ? data.message : [], 
                     loading: false,
                     error: null
                 })
