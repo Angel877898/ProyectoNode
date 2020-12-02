@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ProyectoNode/static/css/main.c36da6a1.chunk.css",
+    "main.js": "/ProyectoNode/static/js/main.bb508ef6.chunk.js",
+    "main.js.map": "/ProyectoNode/static/js/main.bb508ef6.chunk.js.map",
+    "runtime-main.js": "/ProyectoNode/static/js/runtime-main.40e386e9.js",
+    "runtime-main.js.map": "/ProyectoNode/static/js/runtime-main.40e386e9.js.map",
+    "static/js/2.a8b35d86.chunk.js": "/ProyectoNode/static/js/2.a8b35d86.chunk.js",
+    "static/js/2.a8b35d86.chunk.js.map": "/ProyectoNode/static/js/2.a8b35d86.chunk.js.map",
+    "index.html": "/ProyectoNode/index.html",
+    "static/css/main.c36da6a1.chunk.css.map": "/ProyectoNode/static/css/main.c36da6a1.chunk.css.map",
+    "static/js/2.a8b35d86.chunk.js.LICENSE.txt": "/ProyectoNode/static/js/2.a8b35d86.chunk.js.LICENSE.txt",
+    "static/media/delete.e1447a3b.svg": "/ProyectoNode/static/media/delete.e1447a3b.svg",
+    "static/media/edit.eff1b495.svg": "/ProyectoNode/static/media/edit.eff1b495.svg",
+    "static/media/log-out.4e89bd8c.svg": "/ProyectoNode/static/media/log-out.4e89bd8c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.40e386e9.js",
+    "static/js/2.a8b35d86.chunk.js",
+    "static/css/main.c36da6a1.chunk.css",
+    "static/js/main.bb508ef6.chunk.js"
+  ]
+}
