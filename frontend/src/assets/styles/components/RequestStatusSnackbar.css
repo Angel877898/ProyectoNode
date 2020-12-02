@@ -1,0 +1,40 @@
+.snackbar{
+    position: absolute;
+    bottom: 2rem;
+    width: 30rem;
+    height: 3rem;
+    left: calc(50% - 15rem);
+    border-radius: .3125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.snackbar p {
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.loading {
+    background: #4F3EC833;
+    border: solid 2.5px var(--main-color);
+}
+.loading p {
+    color: var(--main-color);
+}
+
+.success {
+    background: #02B26833;
+    border: solid 2.5px #02B268;
+}
+.success p {
+    color: #02B268;
+}
+
+.fail {
+    background: #B2050333;
+    border: solid 2.5px #B20503;
+}
+.fail p {
+    color: #B20503;
+}

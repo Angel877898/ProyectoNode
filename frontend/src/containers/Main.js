@@ -10,6 +10,7 @@ import useFetch from '../utils/services/useFetch'
 import { DataContext } from '../utils/DataContext'
 import '../assets/styles/containers/Main.css'
 import Loading from '../components/Loading'
+import RequestStatusSnackbar from '../components/RequestStatusSnackbar'
 
 const Main = ({ history }) => {
     
@@ -76,6 +77,7 @@ const Main = ({ history }) => {
                 </div>                
             </div>
             { showModalState && <Modal type={ modalType } history={ history }/>}
+            {/* <RequestStatusSnackbar /> */}
         </>
     )
 }
