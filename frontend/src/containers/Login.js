@@ -74,13 +74,11 @@ const Login = ({ history }) => {
                             type={ false }
                             onChange={handlePass}
                         />
-                        {/* TODO checkbox<p>*TO DO Checkbox*</p> */}
                         <Button type="primary" size="large" text='Iniciar Sesion' />
                     
                     </div>
                 </form>
             </div>
-        
         </div>
     );
 

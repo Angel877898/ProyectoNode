@@ -4,14 +4,14 @@ import { DataContext } from '../utils/DataContext'
 import '../assets/styles/components/ModalUser.css'
 
 const ModalUser = ( ) => {
-    const { name, tel, email, address, setShowModalState } = useContext(DataContext)
+    const { name, lastname, tel, email, address, setShowModalState } = useContext(DataContext)
     const handleShowModal = () => setShowModalState({ showModalState: false })
     return (
         <div className={'modal-container large'}>
             <h2>Datos de { name }</h2>
                 <div>
                     <div className="modal-container-data bold">
-                        <p>{ name }</p>
+                        <p>{ `${ name } ${ lastname }` }</p>
                     </div>
                     <div className="modal-container-data">
                         <p>{ tel }</p>

@@ -7,6 +7,7 @@ import CardUser from '../components/CardUser'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
 import useFetch from '../utils/services/useFetch'
+import Loading from '../components/Loading'
 import { DataContext } from '../utils/DataContext'
 import '../assets/styles/containers/Main.css'
 
@@ -51,21 +52,27 @@ const Main = ({ history }) => {
                     <div className='employees'>
                         {
                             loading
-                            ? <h1>Cargando...</h1>
+                            ? <Loading />
                             : (
-                                data.filter( searching(searchValue) ).map((emp) => (
-                                    <CardUser 
-                                        key={ emp.id }
-                                        empId={ emp.id }
-                                        name={ emp.nombre }
-                                        lastname={ emp.apellidos }
-                                        tel={ emp.telefono }
-                                        email={ emp.correo }
-                                        address={ emp.direccion }
-                                    />
-                                ))     
+                                data.length > 0
+                                ? (
+                                    data.filter( searching(searchValue) ).map((emp) => (
+                                        <CardUser 
+                                            key={ emp.id }
+                                            empId={ emp.id }
+                                            name={ emp.nombre }
+                                            lastname={ emp.apellidos }
+                                            tel={ emp.telefono }
+                                            email={ emp.correo }
+                                            address={ emp.direccion }
+                                        />
+                                    ))    
+                                )
+                                : <div className='loading-effect'> <p>No se encontraron usuarios</p></div>
+
                             )
                         }
+                        {/* <Loading /> */}
                     </div>
                     <Button 
                         text='Nuevo empleado'

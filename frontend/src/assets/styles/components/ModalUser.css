@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 3;
 }
 
 .modal-container {
@@ -17,7 +17,7 @@
     padding: 3.6875rem 5.75rem;
     border-radius: .625rem;
     box-shadow: 0 .1875rem .375rem var(--shadow-color) ;
-    z-index: 1;
+    z-index: 2;
 }
 
 .largeM {
