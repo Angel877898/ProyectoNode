@@ -6,35 +6,36 @@
     left: calc(50% - 15rem);
     border-radius: .3125rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    box-shadow: 0 .1875rem .375rem var(--shadow-color);
+    z-index: 1;
+    padding: 0 1rem;
 }
 .snackbar p {
+    color: var(--main-bg-color);
     font-weight: bold;
     font-size: 1rem;
     text-transform: uppercase;
 }
+.snackbar span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
 .loading {
-    background: #4F3EC833;
+    background: #4F3EC8;
     border: solid 2.5px var(--main-color);
-}
-.loading p {
-    color: var(--main-color);
 }
 
 .success {
-    background: #02B26833;
+    background: #02B268;
     border: solid 2.5px #02B268;
-}
-.success p {
-    color: #02B268;
 }
 
 .fail {
-    background: #B2050333;
+    background: #B20503;
     border: solid 2.5px #B20503;
-}
-.fail p {
-    color: #B20503;
 }

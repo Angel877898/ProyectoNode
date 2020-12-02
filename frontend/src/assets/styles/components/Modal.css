@@ -8,6 +8,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 3;
 }
 
 .modal-container {
@@ -19,6 +20,7 @@
     padding: 3.6875rem 5.75rem;
     border-radius: .625rem;
     box-shadow: 0 .1875rem .375rem var(--shadow-color) ;
+    z-index: 2;
 }
 
 .m-large {
